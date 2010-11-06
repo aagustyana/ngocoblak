@@ -1,0 +1,1799 @@
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (40.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (20090619133333)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619133333')[0m
+Migrating to CreateItems (20090619135854)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "price" float, "feed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619135854')[0m
+  [4;36;1mSQL (17.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("feeds")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("items")[0m
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:42:35) [GET]
+Redirected to http://69.89.6.43/feeds/new
+Completed in 31ms (DB: 0) | 302 Found [http://69.89.6.43/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:42:35) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 319ms (View: 258, DB: 0) | 200 OK [http://69.89.6.43/feeds/new]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:42:48) [GET]
+Redirected to http://69.89.6.43/feeds/new
+Completed in 6ms (DB: 0) | 302 Found [http://69.89.6.43/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:42:49) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 25ms (View: 7, DB: 0) | 200 OK [http://69.89.6.43/feeds/new]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:48:07) [GET]
+Redirected to http://piwoolang.com/feeds/new
+Completed in 47ms (DB: 0) | 302 Found [http://piwoolang.com/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:48:08) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 301ms (View: 267, DB: 0) | 200 OK [http://piwoolang.com/feeds/new]
+
+
+Processing FeedsController#create (for 203.128.249.240 at 2009-06-20 22:49:03) [POST]
+  Parameters: {"feed"=>{"name"=>"helooo", "url"=>"http://www.etsy.com/rss_shop.php?user_id=5197906"}, "commit"=>"Create", "authenticity_token"=>"BzOzP1zbBV0lChZkecNg3NaaiMVTr2N3uGbrFP6iKac="}
+  [4;36;1mFeed Create (16.8ms)[0m   [0;1mINSERT INTO "feeds" ("name", "updated_at", "url", "created_at") VALUES('helooo', '2009-06-21 02:49:05', 'http://www.etsy.com/rss_shop.php?user_id=5197906', '2009-06-21 02:49:05')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'Stoned Hairpin', 120.0, 1, '2009-06-21 02:49:05')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'Seedling Seal-Ring', 100.0, 1, '2009-06-21 02:49:05')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'Liquore Bottle Pendant', 150.0, 1, '2009-06-21 02:49:05')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'FERRO ring (iron) - custom word', 70.0, 1, '2009-06-21 02:49:05')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'Junction Pendant', 333.0, 1, '2009-06-21 02:49:05')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'Clench Ring - iron', 75.0, 1, '2009-06-21 02:49:05')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:05', 'Double Band ring - silver', 70.0, 1, '2009-06-21 02:49:05')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Mercury Ring', 80.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Sealing Wax for signet rings', 6.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'MEDUSA RING', 567.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Atom Ring - silver', 100.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'La semeuse Ring (the seeding girl)', 80.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Diesel Punk Wick Ring', 350.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'After shave flask for travellers - brass', 145.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Ribbed Wick Pendant', 250.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (58.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Silver Pearl Earrings', 35.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Crossing Lines Silver Ring', 65.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Multimetal Ring', 120.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Dove Ring', 100.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Lunar Ring - in iron', 80.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Crown Ring', 80.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Beetle Pendant (iron, silver, brass, peridot)', 230.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Vine Ring - iron', 60.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Silver Bubbles Pendant', 85.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Trigger Ring - silver', 60.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Dotted Wick Pendant', 250.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Deep Sea Ring', 60.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Garnet Earrings', 145.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Bear Ring - silver', 100.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Leather Star cuff', 55.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Ear and Finger Rings', 75.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Woman Ring - Anello Donna IN SILVER', 70.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Captured Steel Wooden Hairpin', 110.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Woman Ring - Anello Donna IRON', 100.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Captured Steel Plexi Hairpin', 110.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Lunar Ring - in silver', 80.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Clock Ring (iron)', 70.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Smith Girl Ring', 80.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Miner Lamp - copper, brass', 115.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Braid Ring (iron)', 75.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Plexi Hairpin', 110.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Wick Ring (Clay punk) - silver', 300.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Silver Thimble', 180.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Nefertiti Ring with shell', 105.0, 1, '2009-06-21 02:49:06')[0m
+  [4;35;1mItem Create (17.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Yoke Bracelet', 66.0, 1, '2009-06-21 02:49:06')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:49:06', 'Mask Ring', 180.0, 1, '2009-06-21 02:49:06')[0m
+Redirected to http://piwoolang.com/feeds/1
+Completed in 3852ms (DB: 103) | 302 Found [http://piwoolang.com/feeds]
+
+
+Processing FeedsController#show (for 203.128.249.240 at 2009-06-20 22:49:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 1) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;36;1mItem Load (59.1ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".feed_id = 1) [0m
+Completed in 201ms (View: 122, DB: 60) | 200 OK [http://piwoolang.com/feeds/1]
+
+
+Processing FeedsController#twitter_publish (for 203.128.249.240 at 2009-06-20 22:49:13) [POST]
+  Parameters: {"authenticity_token"=>"BzOzP1zbBV0lChZkecNg3NaaiMVTr2N3uGbrFP6iKac=", "id"=>"1"}
+Redirected to http://twitter.com/oauth/authorize?oauth_token=lNvg75UWrtvE8NJ4rlYRL5DYzUPMPtr0rOz17B780
+Completed in 211ms (DB: 0) | 302 Found [http://piwoolang.com/feeds/1/twitter_publish]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:50:28) [GET]
+Redirected to http://piwoolang.com/feeds/new
+Completed in 6ms (DB: 0) | 302 Found [http://piwoolang.com/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:50:29) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 24ms (View: 6, DB: 0) | 200 OK [http://piwoolang.com/feeds/new]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:50:41) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 277ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:50:42) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 203.128.249.240 at 2009-06-20 22:50:46) [GET]
+  [4;35;1mFeed Load (0.9ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 51ms (View: 33, DB: 1) | 200 OK [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:51:06) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 25ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#create (for 203.128.249.240 at 2009-06-20 22:51:28) [POST]
+  Parameters: {"feed"=>{"name"=>"asdasd", "url"=>"http://www.etsy.com/rss_shop.php?user_id=5197906"}, "commit"=>"Create", "authenticity_token"=>"fWGmOsmClzbc57tlxMDLpFrlnu4xD90rJVwgxh0SBIY="}
+  [4;36;1mFeed Create (0.5ms)[0m   [0;1mINSERT INTO "feeds" ("name", "updated_at", "url", "created_at") VALUES('asdasd', '2009-06-21 02:51:33', 'http://www.etsy.com/rss_shop.php?user_id=5197906', '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Stoned Hairpin', 120.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Seedling Seal-Ring', 100.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Liquore Bottle Pendant', 150.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'FERRO ring (iron) - custom word', 70.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Junction Pendant', 333.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Clench Ring - iron', 75.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Double Band ring - silver', 70.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Mercury Ring', 80.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Sealing Wax for signet rings', 6.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'MEDUSA RING', 567.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Atom Ring - silver', 100.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'La semeuse Ring (the seeding girl)', 80.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Diesel Punk Wick Ring', 350.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'After shave flask for travellers - brass', 145.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Ribbed Wick Pendant', 250.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Silver Pearl Earrings', 35.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Crossing Lines Silver Ring', 65.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Multimetal Ring', 120.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Dove Ring', 100.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Lunar Ring - in iron', 80.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Crown Ring', 80.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Beetle Pendant (iron, silver, brass, peridot)', 230.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Vine Ring - iron', 60.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Silver Bubbles Pendant', 85.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Trigger Ring - silver', 60.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Dotted Wick Pendant', 250.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Deep Sea Ring', 60.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Garnet Earrings', 145.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Bear Ring - silver', 100.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Leather Star cuff', 55.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Ear and Finger Rings', 75.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Woman Ring - Anello Donna IN SILVER', 70.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Captured Steel Wooden Hairpin', 110.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Woman Ring - Anello Donna IRON', 100.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Captured Steel Plexi Hairpin', 110.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Lunar Ring - in silver', 80.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Clock Ring (iron)', 70.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Smith Girl Ring', 80.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Miner Lamp - copper, brass', 115.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Braid Ring (iron)', 75.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Plexi Hairpin', 110.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (33.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Wick Ring (Clay punk) - silver', 300.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Silver Thimble', 180.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Nefertiti Ring with shell', 105.0, 2, '2009-06-21 02:51:33')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:33', 'Yoke Bracelet', 66.0, 2, '2009-06-21 02:51:33')[0m
+  [4;36;1mItem Create (60.8ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:51:34', 'Mask Ring', 180.0, 2, '2009-06-21 02:51:34')[0m
+Redirected to http://www.piwoolang.com/feeds/2
+Completed in 5534ms (DB: 104) | 302 Found [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#show (for 203.128.249.240 at 2009-06-20 22:51:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 2) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;36;1mItem Load (50.2ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".feed_id = 2) [0m
+Completed in 172ms (View: 101, DB: 51) | 200 OK [http://www.piwoolang.com/feeds/2]
+
+
+Processing FeedsController#twitter_publish (for 203.128.249.240 at 2009-06-20 22:51:41) [POST]
+  Parameters: {"authenticity_token"=>"fWGmOsmClzbc57tlxMDLpFrlnu4xD90rJVwgxh0SBIY=", "id"=>"2"}
+Redirected to http://twitter.com/oauth/authorize?oauth_token=1BFqfizW0meoCLXvVE1H4T9S89jRm5PUk25kS45Ykw
+Completed in 315ms (DB: 0) | 302 Found [http://www.piwoolang.com/feeds/2/twitter_publish]
+
+
+Processing FeedsController#twitter_callback (for 203.128.249.240 at 2009-06-20 22:51:50) [GET]
+  Parameters: {"oauth_token"=>"1BFqfizW0meoCLXvVE1H4T9S89jRm5PUk25kS45Ykw"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 2) [0m
+Completed in 1040ms (View: 1, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/twitter_callback/?oauth_token=1BFqfizW0meoCLXvVE1H4T9S89jRm5PUk25kS45Ykw]
+
+
+Processing FeedsController#index (for 174.129.193.87 at 2009-06-20 22:51:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 174.129.193.87 at 2009-06-20 22:51:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (21.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 135ms (View: 50, DB: 21) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 66.249.68.33 at 2009-06-20 22:52:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 79.99.6.106 at 2009-06-20 22:52:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 147ms (View: 76, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-20 22:52:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.2ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 174.129.104.29 at 2009-06-20 22:52:07) [GET]
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-20 22:52:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing WelcomeController#index (for 208.74.66.43 at 2009-06-20 22:52:10) [GET]
+Redirected to http://piwoolang.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://piwoolang.com/]
+
+
+Processing FeedsController#new (for 208.74.66.43 at 2009-06-20 22:52:10) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 49ms (View: 31, DB: 0) | 200 OK [http://piwoolang.com/feeds/new]
+
+
+Processing WelcomeController#index (for 89.151.84.34 at 2009-06-20 22:52:12) [GET]
+Redirected to http://piwoolang.com/feeds/new
+Completed in 6ms (DB: 0) | 302 Found [http://piwoolang.com/]
+
+
+Processing FeedsController#new (for 89.151.84.34 at 2009-06-20 22:52:12) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 25ms (View: 6, DB: 0) | 200 OK [http://piwoolang.com/feeds/new]
+
+
+Processing FeedsController#new (for 89.151.84.34 at 2009-06-20 22:52:13) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 169ms (View: 42, DB: 0) | 200 OK [http://piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-20 22:52:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 203.128.249.240 at 2009-06-20 22:52:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 75.101.156.169 at 2009-06-20 22:52:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 74.126.19.26 at 2009-06-20 22:52:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 208.74.66.43 at 2009-06-20 22:52:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 174.36.146.73 at 2009-06-20 22:52:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:52:41) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 127ms (View: 39, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 203.128.249.240 at 2009-06-20 22:53:21) [GET]
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#index (for 70.37.6.73 at 2009-06-20 22:53:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (0.7ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 174.129.96.212 at 2009-06-20 22:53:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:56:41) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 6ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:56:42) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 25ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#create (for 203.128.249.240 at 2009-06-20 22:56:55) [POST]
+  Parameters: {"feed"=>{"name"=>"test", "url"=>"http://www.etsy.com/rss_shop.php?user_id=5197906"}, "commit"=>"Create", "authenticity_token"=>"fWGmOsmClzbc57tlxMDLpFrlnu4xD90rJVwgxh0SBIY="}
+  [4;36;1mFeed Create (0.5ms)[0m   [0;1mINSERT INTO "feeds" ("name", "updated_at", "url", "created_at") VALUES('test', '2009-06-21 02:56:56', 'http://www.etsy.com/rss_shop.php?user_id=5197906', '2009-06-21 02:56:56')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:56', 'Stoned Hairpin', 120.0, 3, '2009-06-21 02:56:56')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:56', 'Seedling Seal-Ring', 100.0, 3, '2009-06-21 02:56:56')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:56', 'Liquore Bottle Pendant', 150.0, 3, '2009-06-21 02:56:56')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'FERRO ring (iron) - custom word', 70.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Junction Pendant', 333.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Clench Ring - iron', 75.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Double Band ring - silver', 70.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Mercury Ring', 80.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Sealing Wax for signet rings', 6.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'MEDUSA RING', 567.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Atom Ring - silver', 100.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'La semeuse Ring (the seeding girl)', 80.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Diesel Punk Wick Ring', 350.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'After shave flask for travellers - brass', 145.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Ribbed Wick Pendant', 250.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Silver Pearl Earrings', 35.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Crossing Lines Silver Ring', 65.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Multimetal Ring', 120.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Dove Ring', 100.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Lunar Ring - in iron', 80.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Crown Ring', 80.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (111.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Beetle Pendant (iron, silver, brass, peridot)', 230.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Vine Ring - iron', 60.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Silver Bubbles Pendant', 85.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Trigger Ring - silver', 60.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Dotted Wick Pendant', 250.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Deep Sea Ring', 60.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Garnet Earrings', 145.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Bear Ring - silver', 100.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Leather Star cuff', 55.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Ear and Finger Rings', 75.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Woman Ring - Anello Donna IN SILVER', 70.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Captured Steel Wooden Hairpin', 110.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Woman Ring - Anello Donna IRON', 100.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Captured Steel Plexi Hairpin', 110.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Lunar Ring - in silver', 80.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Clock Ring (iron)', 70.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Smith Girl Ring', 80.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Miner Lamp - copper, brass', 115.0, 3, '2009-06-21 02:56:57')[0m
+  [4;36;1mItem Create (19.4ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:57', 'Braid Ring (iron)', 75.0, 3, '2009-06-21 02:56:57')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:58', 'Plexi Hairpin', 110.0, 3, '2009-06-21 02:56:58')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:58', 'Wick Ring (Clay punk) - silver', 300.0, 3, '2009-06-21 02:56:58')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:58', 'Silver Thimble', 180.0, 3, '2009-06-21 02:56:58')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:58', 'Nefertiti Ring with shell', 105.0, 3, '2009-06-21 02:56:58')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:58', 'Yoke Bracelet', 66.0, 3, '2009-06-21 02:56:58')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 02:56:58', 'Mask Ring', 180.0, 3, '2009-06-21 02:56:58')[0m
+Redirected to http://www.piwoolang.com/feeds/3
+Completed in 2944ms (DB: 141) | 302 Found [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#show (for 203.128.249.240 at 2009-06-20 22:56:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 3) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;36;1mItem Load (71.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".feed_id = 3) [0m
+Completed in 175ms (View: 84, DB: 72) | 200 OK [http://www.piwoolang.com/feeds/3]
+
+
+Processing FeedsController#twitter_publish (for 203.128.249.240 at 2009-06-20 22:57:05) [POST]
+  Parameters: {"authenticity_token"=>"fWGmOsmClzbc57tlxMDLpFrlnu4xD90rJVwgxh0SBIY=", "id"=>"3"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 3) [0m
+Completed in 907ms (View: 1, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/3/twitter_publish]
+
+
+Processing FeedsController#index (for 174.129.193.93 at 2009-06-20 22:57:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (0.8ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 26ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 174.129.193.93 at 2009-06-20 22:57:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (0.9ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 121ms (View: 40, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:57:10) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 66.249.68.33 at 2009-06-20 22:57:12) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-20 22:57:14) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-20 22:57:15) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 135ms (View: 44, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-20 22:57:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 373ms (View: 156, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-20 22:57:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 285ms (View: 84, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-20 22:57:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (81.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 244ms (View: 8, DB: 81) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 208.74.66.43 at 2009-06-20 22:57:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (0.9ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 223ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 79.99.6.106 at 2009-06-20 22:57:31) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 252ms (View: 9, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 75.101.156.169 at 2009-06-20 22:57:38) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 204ms (View: 43, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 74.126.19.26 at 2009-06-20 22:57:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 322ms (View: 131, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:57:52) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:57:52) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 203.128.249.240 at 2009-06-20 22:57:56) [GET]
+  [4;36;1mFeed Load (0.6ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds]
+
+
+Processing WelcomeController#index (for 203.128.249.240 at 2009-06-20 22:58:08) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 203.128.249.240 at 2009-06-20 22:58:09) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 208.100.2.57 at 2009-06-20 22:58:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 100ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 70.37.6.73 at 2009-06-20 22:58:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (0.7ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 118ms (View: 23, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-20 23:12:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-20 23:17:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (0.7ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 91.121.151.130 at 2009-06-20 23:18:35) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing FeedsController#index (for 91.121.151.130 at 2009-06-20 23:18:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mFeed Load (0.6ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing WelcomeController#index (for 203.128.249.244 at 2009-06-20 23:55:22) [GET]
+Redirected to http://prawirasoft.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://prawirasoft.com/]
+
+
+Processing FeedsController#new (for 203.128.249.244 at 2009-06-20 23:55:23) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 32ms (View: 7, DB: 0) | 200 OK [http://prawirasoft.com/feeds/new]
+
+
+Processing WelcomeController#index (for 72.30.65.62 at 2009-06-21 09:51:27) [GET]
+Redirected to http://www.prawirasoft.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.prawirasoft.com/]
+
+
+Processing FeedsController#new (for 72.30.65.62 at 2009-06-21 09:51:29) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 27ms (View: 7, DB: 0) | 200 OK [http://www.prawirasoft.com/feeds/new]
+
+
+Processing FeedsController#index (for 72.30.65.62 at 2009-06-21 10:02:46) [GET]
+  [4;35;1mFeed Load (0.7ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 33ms (View: 14, DB: 1) | 200 OK [http://www.prawirasoft.com/feeds]
+
+
+Processing WelcomeController#index (for 81.158.166.103 at 2009-06-21 15:15:34) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 81.158.166.103 at 2009-06-21 15:15:34) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 76ms (View: 15, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#create (for 81.158.166.103 at 2009-06-21 15:16:08) [POST]
+  Parameters: {"feed"=>{"name"=>"blindspotjewellery", "url"=>"http://www.etsy.com/rss_shop.php?user_id=5197906"}, "commit"=>"Create", "authenticity_token"=>"JcqNwh1AH3Qr8DdDpfEIiPqB1YNrNw4lD+2xtSRLxwI="}
+  [4;36;1mFeed Create (28.0ms)[0m   [0;1mINSERT INTO "feeds" ("name", "updated_at", "url", "created_at") VALUES('blindspotjewellery', '2009-06-21 19:16:10', 'http://www.etsy.com/rss_shop.php?user_id=5197906', '2009-06-21 19:16:10')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:10', 'Stoned Hairpin', 120.0, 4, '2009-06-21 19:16:10')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:10', 'Seedling Seal-Ring', 100.0, 4, '2009-06-21 19:16:10')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Liquore Bottle Pendant', 150.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'FERRO ring (iron) - custom word', 70.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Junction Pendant', 333.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Clench Ring - iron', 75.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Double Band ring - silver', 70.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Mercury Ring', 80.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Sealing Wax for signet rings', 6.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'MEDUSA RING', 567.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (34.4ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Atom Ring - silver', 100.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'La semeuse Ring (the seeding girl)', 80.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Diesel Punk Wick Ring', 350.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'After shave flask for travellers - brass', 145.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Ribbed Wick Pendant', 250.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Silver Pearl Earrings', 35.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Crossing Lines Silver Ring', 65.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Multimetal Ring', 120.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Dove Ring', 100.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Lunar Ring - in iron', 80.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Crown Ring', 80.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Beetle Pendant (iron, silver, brass, peridot)', 230.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Vine Ring - iron', 60.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Silver Bubbles Pendant', 85.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Trigger Ring - silver', 60.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Dotted Wick Pendant', 250.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Deep Sea Ring', 60.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Garnet Earrings', 145.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Bear Ring - silver', 100.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Leather Star cuff', 55.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Ear and Finger Rings', 75.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Woman Ring - Anello Donna IN SILVER', 70.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Captured Steel Wooden Hairpin', 110.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (78.8ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Woman Ring - Anello Donna IRON', 100.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Captured Steel Plexi Hairpin', 110.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Lunar Ring - in silver', 80.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Clock Ring (iron)', 70.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Smith Girl Ring', 80.0, 4, '2009-06-21 19:16:11')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:11', 'Miner Lamp - copper, brass', 115.0, 4, '2009-06-21 19:16:11')[0m
+  [4;36;1mItem Create (16.4ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Braid Ring (iron)', 75.0, 4, '2009-06-21 19:16:12')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Plexi Hairpin', 110.0, 4, '2009-06-21 19:16:12')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Wick Ring (Clay punk) - silver', 300.0, 4, '2009-06-21 19:16:12')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Silver Thimble', 180.0, 4, '2009-06-21 19:16:12')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Nefertiti Ring with shell', 105.0, 4, '2009-06-21 19:16:12')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Yoke Bracelet', 66.0, 4, '2009-06-21 19:16:12')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:16:12', 'Mask Ring', 180.0, 4, '2009-06-21 19:16:12')[0m
+Redirected to http://www.piwoolang.com/feeds/4
+Completed in 3910ms (DB: 167) | 302 Found [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#show (for 81.158.166.103 at 2009-06-21 15:16:12) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 4) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;36;1mItem Load (51.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".feed_id = 4) [0m
+Completed in 181ms (View: 109, DB: 52) | 200 OK [http://www.piwoolang.com/feeds/4]
+
+
+Processing FeedsController#twitter_publish (for 81.158.166.103 at 2009-06-21 15:16:20) [POST]
+  Parameters: {"authenticity_token"=>"JcqNwh1AH3Qr8DdDpfEIiPqB1YNrNw4lD+2xtSRLxwI=", "id"=>"4"}
+Redirected to http://twitter.com/oauth/authorize?oauth_token=hVZQwwAGBMpnacysq2y8bVE2T5mVbvwX2ywnRUXDutE
+Completed in 187ms (DB: 0) | 302 Found [http://www.piwoolang.com/feeds/4/twitter_publish]
+
+
+Processing FeedsController#twitter_callback (for 81.158.166.103 at 2009-06-21 15:20:28) [GET]
+  Parameters: {"oauth_token"=>"hVZQwwAGBMpnacysq2y8bVE2T5mVbvwX2ywnRUXDutE"}
+  [4;35;1mFeed Load (0.6ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 4) [0m
+Completed in 2061ms (View: 13, DB: 1) | 200 OK [http://www.piwoolang.com/feeds/twitter_callback/?oauth_token=hVZQwwAGBMpnacysq2y8bVE2T5mVbvwX2ywnRUXDutE]
+
+
+Processing FeedsController#index (for 89.212.78.95 at 2009-06-21 15:20:31) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (0.9ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 26ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#new (for 81.158.166.103 at 2009-06-21 15:20:35) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 75.101.156.169 at 2009-06-21 15:20:36) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 468ms (View: 50, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 75.101.130.131 at 2009-06-21 15:20:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 75.101.130.131 at 2009-06-21 15:20:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 143ms (View: 57, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 66.249.68.33 at 2009-06-21 15:20:41) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 9, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 81.158.166.103 at 2009-06-21 15:20:57) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-21 15:21:01) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (0.9ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 26ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-21 15:21:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (0.8ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 26ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 208.74.66.43 at 2009-06-21 15:21:06) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (0.8ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 79.99.6.106 at 2009-06-21 15:21:14) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 140ms (View: 53, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 81.158.166.103 at 2009-06-21 15:21:30) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing WelcomeController#index (for 81.158.166.103 at 2009-06-21 15:21:34) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 81.158.166.103 at 2009-06-21 15:21:34) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 77ms (View: 55, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 81.158.166.103 at 2009-06-21 15:21:39) [GET]
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 8, DB: 1) | 200 OK [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#index (for 174.129.96.212 at 2009-06-21 15:21:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (0.9ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 134ms (View: 48, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#new (for 81.158.166.103 at 2009-06-21 15:21:41) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 25ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#index (for 67.220.192.206 at 2009-06-21 15:22:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 146ms (View: 42, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#create (for 81.158.166.103 at 2009-06-21 15:22:12) [POST]
+  Parameters: {"feed"=>{"name"=>"lanlizzy", "url"=>"http://www.etsy.com/rss_shop.php?user_id=5197908"}, "commit"=>"Create", "authenticity_token"=>"JcqNwh1AH3Qr8DdDpfEIiPqB1YNrNw4lD+2xtSRLxwI="}
+  [4;36;1mFeed Create (0.5ms)[0m   [0;1mINSERT INTO "feeds" ("name", "updated_at", "url", "created_at") VALUES('lanlizzy', '2009-06-21 19:22:13', 'http://www.etsy.com/rss_shop.php?user_id=5197908', '2009-06-21 19:22:13')[0m
+  [4;35;1mItem Create (0.3ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-21 19:22:13', 'UFO - Lampwork Bracelet', 105.0, 5, '2009-06-21 19:22:13')[0m
+Redirected to http://www.piwoolang.com/feeds/5
+Completed in 355ms (DB: 1) | 302 Found [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#show (for 81.158.166.103 at 2009-06-21 15:22:13) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (0.5ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 5) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;35;1mItem Load (0.8ms)[0m   [0mSELECT * FROM "items" WHERE ("items".feed_id = 5) [0m
+Completed in 93ms (View: 72, DB: 1) | 200 OK [http://www.piwoolang.com/feeds/5]
+
+
+Processing FeedsController#twitter_publish (for 81.158.166.103 at 2009-06-21 15:22:18) [POST]
+  Parameters: {"authenticity_token"=>"JcqNwh1AH3Qr8DdDpfEIiPqB1YNrNw4lD+2xtSRLxwI=", "id"=>"5"}
+  [4;36;1mFeed Load (0.5ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 5) [0m
+Completed in 1052ms (View: 1, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/5/twitter_publish]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:28) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:28) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 136ms (View: 58, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-21 15:22:30) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 164ms (View: 47, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 66.249.68.33 at 2009-06-21 15:22:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.2ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-21 15:22:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 142ms (View: 54, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 174.129.227.79 at 2009-06-21 15:22:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 106ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:33) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.3ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:34) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:34) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 40ms (View: 23, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.2ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 160ms (View: 43, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 208.74.66.43 at 2009-06-21 15:22:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 186ms (View: 68, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:22:37) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 79.99.6.106 at 2009-06-21 15:22:44) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 38ms (View: 19, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 70.37.6.73 at 2009-06-21 15:22:57) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:23:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.3ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 15:23:22) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 70.37.6.73 at 2009-06-21 15:23:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 453ms (View: 63, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 174.129.96.212 at 2009-06-21 15:23:57) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 67.88.244.13 at 2009-06-21 15:24:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 34ms (View: 15, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 67.88.244.13 at 2009-06-21 15:33:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 75.101.139.240 at 2009-06-21 15:35:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 75.101.139.240 at 2009-06-21 15:37:17) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-21 15:41:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.0ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-21 15:42:41) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 467ms (View: 449, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 174.129.223.229 at 2009-06-21 15:46:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 31ms (View: 12, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=2]
+
+
+Processing FeedsController#index (for 174.129.223.229 at 2009-06-21 15:58:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=3]
+
+
+Processing WelcomeController#index (for 66.249.67.187 at 2009-06-21 18:55:20) [GET]
+Redirected to http://www.prawirasoft.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.prawirasoft.com/]
+
+
+Processing FeedsController#new (for 66.249.67.187 at 2009-06-21 18:55:21) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.prawirasoft.com/feeds/new]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 21:01:44) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 216.24.142.41 at 2009-06-21 21:01:44) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 112ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing WelcomeController#index (for 74.55.94.90 at 2009-06-21 21:14:17) [GET]
+Redirected to http://prawirasoft.com/feeds/new
+Completed in 6ms (DB: 0) | 302 Found [http://prawirasoft.com/]
+
+
+Processing FeedsController#new (for 74.55.94.90 at 2009-06-21 21:14:18) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 156ms (View: 39, DB: 0) | 200 OK [http://prawirasoft.com/feeds/new]
+
+
+Processing FeedsController#index (for 66.249.67.187 at 2009-06-21 21:25:45) [GET]
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.prawirasoft.com/feeds]
+
+
+Processing FeedsController#index (for 174.129.223.229 at 2009-06-21 21:57:28) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (1.1ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=5]
+
+
+Processing FeedsController#index (for 174.129.223.229 at 2009-06-21 22:10:59) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mFeed Load (1.1ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=4]
+
+
+Processing FeedsController#show (for 66.249.67.187 at 2009-06-21 23:25:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (0.6ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 4) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;35;1mItem Load (58.9ms)[0m   [0mSELECT * FROM "items" WHERE ("items".feed_id = 4) [0m
+Completed in 152ms (View: 73, DB: 60) | 200 OK [http://www.prawirasoft.com/feeds/4]
+
+
+Processing FeedsController#show (for 66.249.67.187 at 2009-06-21 23:25:47) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (0.5ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 5) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".feed_id = 5) [0m
+Completed in 75ms (View: 55, DB: 1) | 200 OK [http://www.prawirasoft.com/feeds/5]
+
+
+Processing WelcomeController#index (for 66.249.68.33 at 2009-06-22 01:54:31) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 6ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 66.249.68.33 at 2009-06-22 01:54:31) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 147ms (View: 44, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#show (for 66.249.68.33 at 2009-06-22 01:54:32) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mFeed Load (0.5ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 4) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;35;1mItem Load (70.2ms)[0m   [0mSELECT * FROM "items" WHERE ("items".feed_id = 4) [0m
+Completed in 273ms (View: 130, DB: 71) | 200 OK [http://www.piwoolang.com/feeds/4]
+
+
+Processing ApplicationController#index (for 61.160.217.89 at 2009-06-22 02:02:08) [GET]
+
+ActionController::RoutingError (No route matches "/cgi-bin/textenv.pl" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.2) lib/eventmachine.rb:231:in `run_machine'
+  eventmachine (0.12.2) lib/eventmachine.rb:231:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing FeedsController#show (for 66.249.68.33 at 2009-06-22 02:09:33) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFeed Load (0.5ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 5) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".feed_id = 5) [0m
+Completed in 81ms (View: 51, DB: 1) | 200 OK [http://www.piwoolang.com/feeds/5]
+
+
+Processing FeedsController#index (for 66.249.68.33 at 2009-06-22 03:54:47) [GET]
+  [4;36;1mFeed Load (1.0ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds]
+
+
+Processing WelcomeController#index (for 81.158.166.103 at 2009-06-22 06:25:46) [GET]
+Redirected to http://www.piwoolang.com/feeds/new
+Completed in 7ms (DB: 0) | 302 Found [http://www.piwoolang.com/]
+
+
+Processing FeedsController#new (for 81.158.166.103 at 2009-06-22 06:25:47) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://www.piwoolang.com/feeds/new]
+
+
+Processing FeedsController#create (for 81.158.166.103 at 2009-06-22 06:44:49) [POST]
+  Parameters: {"feed"=>{"name"=>"Wauterlily", "url"=>"http://www.etsy.com/rss_shop.php?user_id=5661473"}, "commit"=>"Create", "authenticity_token"=>"JcqNwh1AH3Qr8DdDpfEIiPqB1YNrNw4lD+2xtSRLxwI="}
+  [4;35;1mFeed Create (22.8ms)[0m   [0mINSERT INTO "feeds" ("name", "updated_at", "url", "created_at") VALUES('Wauterlily', '2009-06-22 10:44:53', 'http://www.etsy.com/rss_shop.php?user_id=5661473', '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Simple Eyelet Skirt', 45.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Mushroom Bag', 8.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Summer Wishin&#39; Top', 40.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Knotty Scarf', 15.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Fugly Pants', 45.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Smokin&#39; Elephant', 25.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (48.4ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'The Small Satchel', 35.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Reversible Wristlet - Ivory Cocoa Flowers', 15.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Reversible Wristlet - Pink Fireworks', 15.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Reversible Wristlet - Chocolate Mushrooms', 15.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Baby Blues -n- Patchwork Reversible Wristlet', 15.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Teal Ocean Quilt Twin', 45.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.3ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Blue Dragonfly Quilt', 60.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Multi-hued Baby Quilt', 20.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Baby Blues Quilt', 20.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Cowl Back Top', 30.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Mother Of Pearl Multi Strand Necklace', 20.0, 6, '2009-06-22 10:44:53')[0m
+  [4;35;1mItem Create (0.2ms)[0m   [0mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Black Porcelain Rectangle Necklace', 18.0, 6, '2009-06-22 10:44:53')[0m
+  [4;36;1mItem Create (0.2ms)[0m   [0;1mINSERT INTO "items" ("updated_at", "title", "price", "feed_id", "created_at") VALUES('2009-06-22 10:44:53', 'Random Agate Necklace', 22.0, 6, '2009-06-22 10:44:53')[0m
+Redirected to http://www.piwoolang.com/feeds/6
+Completed in 4016ms (DB: 75) | 302 Found [http://www.piwoolang.com/feeds]
+
+
+Processing FeedsController#show (for 81.158.166.103 at 2009-06-22 06:44:53) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (0.5ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 6) [0m
+Rendering template within layouts/feeds
+Rendering feeds/show
+  [4;36;1mItem Load (38.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".feed_id = 6) [0m
+Completed in 255ms (View: 106, DB: 39) | 200 OK [http://www.piwoolang.com/feeds/6]
+
+
+Processing FeedsController#twitter_publish (for 81.158.166.103 at 2009-06-22 06:45:03) [POST]
+  Parameters: {"authenticity_token"=>"JcqNwh1AH3Qr8DdDpfEIiPqB1YNrNw4lD+2xtSRLxwI=", "id"=>"6"}
+  [4;35;1mFeed Load (0.6ms)[0m   [0mSELECT * FROM "feeds" WHERE ("feeds"."id" = 6) [0m
+Completed in 822ms (View: 1, DB: 1) | 200 OK [http://www.piwoolang.com/feeds/6/twitter_publish]
+
+
+Processing FeedsController#index (for 89.212.78.95 at 2009-06-22 06:45:05) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (1.3ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 46ms (View: 28, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 174.129.193.73 at 2009-06-22 06:45:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.3ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 49ms (View: 29, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 174.129.193.73 at 2009-06-22 06:45:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (34.5ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 160ms (View: 40, DB: 35) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-22 06:45:13) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 89.151.84.34 at 2009-06-22 06:45:14) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (1.2ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 174.129.243.238 at 2009-06-22 06:45:14) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 66.249.68.33 at 2009-06-22 06:45:20) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (1.3ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 151ms (View: 67, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 79.99.6.106 at 2009-06-22 06:45:23) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.3ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 49ms (View: 30, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 208.74.66.43 at 2009-06-22 06:45:33) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (1.3ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 31ms (View: 12, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 74.126.19.26 at 2009-06-22 06:45:37) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.3ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 70.37.6.73 at 2009-06-22 06:45:58) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (1.2ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 29ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 71.6.201.31 at 2009-06-22 06:53:03) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.2ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 12, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing FeedsController#index (for 89.151.84.35 at 2009-06-22 07:05:20) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mFeed Load (1.2ms)[0m   [0;1mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 30ms (View: 11, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+
+
+Processing ApplicationController#index (for 61.160.217.89 at 2009-06-22 09:21:41) [GET]
+
+ActionController::RoutingError (No route matches "/cgi-bin/textenv.pl" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.2) lib/eventmachine.rb:231:in `run_machine'
+  eventmachine (0.12.2) lib/eventmachine.rb:231:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing FeedsController#index (for 174.129.223.229 at 2009-06-22 09:53:30) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFeed Load (1.3ms)[0m   [0mSELECT * FROM "feeds" [0m
+Rendering template within layouts/feeds
+Rendering feeds/index
+Completed in 47ms (View: 12, DB: 1) | 200 OK [http://www.piwoolang.com/feeds?id=6]
+  [4;36;1mSQL (16.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (20090619133333)
+Migrating to CreateItems (20090619135854)
+Migrating to AddLinkToItems (20090622142951)
+Migrating to CreateNgocoblakComments (20090825021322)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "ngocoblak_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "status" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090825021322')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("feeds")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("items")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ngocoblak_comments")[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-08-25 09:37:44) [GET]
+Redirected to http://localhost:3000/feeds/new
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing FeedsController#new (for 127.0.0.1 at 2009-08-25 09:37:44) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 81ms (View: 50, DB: 0) | 200 OK [http://localhost/feeds/new]
+
+
+Processing FeedsController#show (for 127.0.0.1 at 2009-08-25 09:37:51) [GET]
+  Parameters: {"id"=>"ngocoblak"}
+  [4;36;1mFeed Load (0.2ms)[0m   [0;1mSELECT * FROM "feeds" WHERE ("feeds"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Feed with ID=ngocoblak):
+  app/controllers/feeds_controller.rb:17:in `show'
+  thin (1.2.2) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.2) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:57:in `process'
+  thin (1.2.2) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run_machine'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run'
+  thin (1.2.2) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.2) lib/thin/server.rb:156:in `start'
+  thin (1.2.2) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.2) lib/thin/runner.rb:174:in `send'
+  thin (1.2.2) lib/thin/runner.rb:174:in `run_command'
+  thin (1.2.2) lib/thin/runner.rb:140:in `run!'
+  thin (1.2.2) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-25 09:39:41) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak_publish (for 127.0.0.1 at 2009-08-25 09:49:22) [POST]
+  Parameters: {"commit"=>"Lajengkeun", "authenticity_token"=>"GMfOKHPMTFWGxsnIASePEkCzDPgOw0l41G8fXP6w2Cc=", "content"=>"test"}
+  [4;36;1mNgocoblakComment Create (22.5ms)[0m   [0;1mINSERT INTO "ngocoblak_comments" ("created_at", "updated_at", "content", "status") VALUES('2009-08-25 02:49:23', '2009-08-25 02:49:23', 'test', 't')[0m
+Redirected to http://twitter.com/oauth/authorize?oauth_token=An6YAjVvec3STZxn1gIzaeIwLe85YVA0V0KTpOBf0
+Completed in 1072ms (DB: 23) | 302 Found [http://localhost/feeds/ngocoblak_publish]
+
+
+Processing FeedsController#ngocoblak_callback (for 127.0.0.1 at 2009-08-25 09:49:57) [GET]
+  Parameters: {"oauth_token"=>"An6YAjVvec3STZxn1gIzaeIwLe85YVA0V0KTpOBf0"}
+
+Net::HTTPServerException (401 "Unauthorized"):
+  /opt/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  oauth (0.3.1) lib/oauth/consumer.rb:130:in `token_request'
+  oauth (0.3.1) lib/oauth/token.rb:65:in `get_access_token'
+  /opt/local/lib/ruby/gems/1.8/gems/moomerman-twitter_oauth-0.1.19/lib/twitter_oauth/client.rb:26:in `authorize'
+  app/controllers/feeds_controller.rb:144:in `ngocoblak_callback'
+  thin (1.2.2) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.2) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:57:in `process'
+  thin (1.2.2) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run_machine'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run'
+  thin (1.2.2) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.2) lib/thin/server.rb:156:in `start'
+  thin (1.2.2) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.2) lib/thin/runner.rb:174:in `send'
+  thin (1.2.2) lib/thin/runner.rb:174:in `run_command'
+  thin (1.2.2) lib/thin/runner.rb:140:in `run!'
+  thin (1.2.2) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (40.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-08-25 09:51:10) [GET]
+Redirected to http://ngocoblak.local:3000/feeds/new
+Completed in 2ms (DB: 0) | 302 Found [http://ngocoblak.local/]
+
+
+Processing FeedsController#new (for 127.0.0.1 at 2009-08-25 09:51:10) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://ngocoblak.local/feeds/new]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-25 09:51:17) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak_publish (for 127.0.0.1 at 2009-08-25 09:51:22) [POST]
+  Parameters: {"commit"=>"Lajengkeun", "authenticity_token"=>"QbfPMWwnz/tBDiIAuYgbG6rm2n1Qzaxj86ZdJEishk0=", "content"=>"test"}
+  [4;35;1mNgocoblakComment Create (0.6ms)[0m   [0mINSERT INTO "ngocoblak_comments" ("created_at", "updated_at", "content", "status") VALUES('2009-08-25 02:51:23', '2009-08-25 02:51:23', 'test', 't')[0m
+Redirected to http://twitter.com/oauth/authorize?oauth_token=aymDddyKje4UfABn4TqIWgM0DLU3mflBnaEUO2WXp3U
+Completed in 1152ms (DB: 1) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_publish]
+
+
+Processing FeedsController#ngocoblak_callback (for 127.0.0.1 at 2009-08-25 09:53:46) [GET]
+  Parameters: {"oauth_token"=>"aymDddyKje4UfABn4TqIWgM0DLU3mflBnaEUO2WXp3U"}
+  [4;36;1mNgocoblakComment Load (0.6ms)[0m   [0;1mSELECT * FROM "ngocoblak_comments" LIMIT 1[0m
+  [4;35;1mNgocoblakComment Load (0.4ms)[0m   [0mSELECT * FROM "ngocoblak_comments" [0m
+  [4;36;1mNgocoblakComment Destroy (0.4ms)[0m   [0;1mDELETE FROM "ngocoblak_comments" WHERE "id" = 1[0m
+  [4;35;1mNgocoblakComment Destroy (0.4ms)[0m   [0mDELETE FROM "ngocoblak_comments" WHERE "id" = 2[0m
+
+ActionView::MissingTemplate (Missing template feeds/ngocoblak_callback.erb in view path app/views):
+  thin (1.2.2) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.2) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:57:in `process'
+  thin (1.2.2) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run_machine'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run'
+  thin (1.2.2) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.2) lib/thin/server.rb:156:in `start'
+  thin (1.2.2) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.2) lib/thin/runner.rb:174:in `send'
+  thin (1.2.2) lib/thin/runner.rb:174:in `run_command'
+  thin (1.2.2) lib/thin/runner.rb:140:in `run!'
+  thin (1.2.2) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-25 09:58:59) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak_publish (for 127.0.0.1 at 2009-08-25 09:59:04) [POST]
+  Parameters: {"commit"=>"Lajengkeun", "authenticity_token"=>"QbfPMWwnz/tBDiIAuYgbG6rm2n1Qzaxj86ZdJEishk0=", "content"=>"deui"}
+  [4;36;1mNgocoblakComment Create (0.4ms)[0m   [0;1mINSERT INTO "ngocoblak_comments" ("created_at", "updated_at", "content", "status") VALUES('2009-08-25 02:59:05', '2009-08-25 02:59:05', 'deui', 't')[0m
+Redirected to http://twitter.com/oauth/authorize?oauth_token=O5wTmay3N1nP4s6vma1YZKsUsMpXx4pfQyuAsOfk
+Completed in 1758ms (DB: 0) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_publish]
+
+
+Processing FeedsController#ngocoblak_callback (for 127.0.0.1 at 2009-08-25 09:59:26) [GET]
+  Parameters: {"oauth_token"=>"O5wTmay3N1nP4s6vma1YZKsUsMpXx4pfQyuAsOfk"}
+  [4;35;1mNgocoblakComment Load (0.6ms)[0m   [0mSELECT * FROM "ngocoblak_comments" LIMIT 1[0m
+  [4;36;1mNgocoblakComment Load (0.4ms)[0m   [0;1mSELECT * FROM "ngocoblak_comments" [0m
+  [4;35;1mNgocoblakComment Destroy (0.4ms)[0m   [0mDELETE FROM "ngocoblak_comments" WHERE "id" = 3[0m
+Redirected to http://ngocoblak.local:3000/feeds/ngocoblak
+Completed in 6035ms (DB: 1) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_callback/?oauth_token=O5wTmay3N1nP4s6vma1YZKsUsMpXx4pfQyuAsOfk]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-25 09:59:32) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-25 10:01:58) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak_publish (for 127.0.0.1 at 2009-08-25 10:02:04) [POST]
+  Parameters: {"commit"=>"Lajengkeun", "authenticity_token"=>"QbfPMWwnz/tBDiIAuYgbG6rm2n1Qzaxj86ZdJEishk0=", "content"=>"test deui"}
+  [4;36;1mNgocoblakComment Create (0.6ms)[0m   [0;1mINSERT INTO "ngocoblak_comments" ("created_at", "updated_at", "content", "status") VALUES('2009-08-25 03:02:05', '2009-08-25 03:02:05', 'test deui', 't')[0m
+Redirected to http://twitter.com/oauth/authorize?oauth_token=ifadUemjt3HgkdjfI28HJ7c9Pyih0cNoQQnijxYOM
+Completed in 1137ms (DB: 1) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_publish]
+
+
+Processing FeedsController#ngocoblak_callback (for 127.0.0.1 at 2009-08-25 10:02:27) [GET]
+  Parameters: {"oauth_token"=>"ifadUemjt3HgkdjfI28HJ7c9Pyih0cNoQQnijxYOM"}
+  [4;35;1mNgocoblakComment Load (0.6ms)[0m   [0mSELECT * FROM "ngocoblak_comments" LIMIT 1[0m
+  [4;36;1mNgocoblakComment Load (0.4ms)[0m   [0;1mSELECT * FROM "ngocoblak_comments" [0m
+  [4;35;1mNgocoblakComment Destroy (0.4ms)[0m   [0mDELETE FROM "ngocoblak_comments" WHERE "id" = 4[0m
+Redirected to http://ngocoblak.local:3000/feeds/ngocoblak
+Completed in 6063ms (DB: 1) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_callback/?oauth_token=ifadUemjt3HgkdjfI28HJ7c9Pyih0cNoQQnijxYOM]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-25 10:02:33) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+  [4;36;1mSQL (12.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (20090619133333)
+Migrating to CreateItems (20090619135854)
+Migrating to AddLinkToItems (20090622142951)
+Migrating to CreateNgocoblakComments (20090825021322)
+Migrating to AddCommentPermalink (20090826034905)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "ngocoblak_comments" ADD "permalink" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090826034905')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("feeds")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("items")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("ngocoblak_comments")[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2009-08-26 10:59:27) [GET]
+Redirected to http://localhost:3000/feeds/new
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing FeedsController#new (for 127.0.0.1 at 2009-08-26 10:59:27) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/new
+Completed in 48ms (View: 22, DB: 0) | 200 OK [http://localhost/feeds/new]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-26 10:59:34) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-26 10:59:55) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-26 11:00:08) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak_publish (for 127.0.0.1 at 2009-08-26 11:00:41) [POST]
+  Parameters: {"commit"=>"Lajengkeun", "authenticity_token"=>"GMfOKHPMTFWGxsnIASePEkCzDPgOw0l41G8fXP6w2Cc=", "content"=>"hai"}
+  [4;36;1mNgocoblakComment Create (22.2ms)[0m   [0;1mINSERT INTO "ngocoblak_comments" ("permalink", "created_at", "updated_at", "content", "status") VALUES(NULL, '2009-08-26 04:00:41', '2009-08-26 04:00:41', 'hai', 't')[0m
+Redirected to http://twitter.com/oauth/authorize?oauth_token=83LItF5x7XCBIDmxHtzf2B4s3YxSlSYld2fq9rEARI
+Completed in 1032ms (DB: 22) | 302 Found [http://localhost/feeds/ngocoblak_publish]
+
+
+Processing FeedsController#ngocoblak_callback (for 127.0.0.1 at 2009-08-26 11:01:09) [GET]
+  Parameters: {"oauth_token"=>"83LItF5x7XCBIDmxHtzf2B4s3YxSlSYld2fq9rEARI"}
+
+Net::HTTPServerException (401 "Unauthorized"):
+  /opt/local/lib/ruby/1.8/net/http.rb:2097:in `error!'
+  oauth (0.3.1) lib/oauth/consumer.rb:130:in `token_request'
+  oauth (0.3.1) lib/oauth/token.rb:65:in `get_access_token'
+  /opt/local/lib/ruby/gems/1.8/gems/moomerman-twitter_oauth-0.1.19/lib/twitter_oauth/client.rb:26:in `authorize'
+  app/controllers/feeds_controller.rb:144:in `ngocoblak_callback'
+  thin (1.2.2) lib/thin/connection.rb:76:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:74:in `catch'
+  thin (1.2.2) lib/thin/connection.rb:74:in `pre_process'
+  thin (1.2.2) lib/thin/connection.rb:57:in `process'
+  thin (1.2.2) lib/thin/connection.rb:42:in `receive_data'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run_machine'
+  eventmachine (0.12.8) lib/eventmachine.rb:242:in `run'
+  thin (1.2.2) lib/thin/backends/base.rb:57:in `start'
+  thin (1.2.2) lib/thin/server.rb:156:in `start'
+  thin (1.2.2) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.2.2) lib/thin/runner.rb:174:in `send'
+  thin (1.2.2) lib/thin/runner.rb:174:in `run_command'
+  thin (1.2.2) lib/thin/runner.rb:140:in `run!'
+  thin (1.2.2) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (114.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-26 11:01:34) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak_publish (for 127.0.0.1 at 2009-08-26 11:01:37) [POST]
+  Parameters: {"commit"=>"Lajengkeun", "authenticity_token"=>"NtcoGktMnWb/WSWUDPHasAni7TB3UCe7Ikr1kpAulfY=", "content"=>"halo"}
+  [4;35;1mNgocoblakComment Create (0.4ms)[0m   [0mINSERT INTO "ngocoblak_comments" ("permalink", "created_at", "updated_at", "content", "status") VALUES(NULL, '2009-08-26 04:01:38', '2009-08-26 04:01:38', 'halo', 't')[0m
+Redirected to http://twitter.com/oauth/authorize?oauth_token=Y4INtqLmdVnlxQ0oPpPxZcAiIVj5OdnXePNykz3zw4
+Completed in 928ms (DB: 0) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_publish]
+
+
+Processing FeedsController#ngocoblak_callback (for 127.0.0.1 at 2009-08-26 11:01:53) [GET]
+  Parameters: {"oauth_token"=>"Y4INtqLmdVnlxQ0oPpPxZcAiIVj5OdnXePNykz3zw4"}
+  [4;36;1mNgocoblakComment Load (0.6ms)[0m   [0;1mSELECT * FROM "ngocoblak_comments" LIMIT 1[0m
+  [4;35;1mNgocoblakComment Load (0.5ms)[0m   [0mSELECT * FROM "ngocoblak_comments" [0m
+  [4;36;1mNgocoblakComment Destroy (0.4ms)[0m   [0;1mDELETE FROM "ngocoblak_comments" WHERE "id" = 5[0m
+  [4;35;1mNgocoblakComment Destroy (0.5ms)[0m   [0mDELETE FROM "ngocoblak_comments" WHERE "id" = 6[0m
+Redirected to http://ngocoblak.local:3000/feeds/ngocoblak
+Completed in 5660ms (DB: 2) | 302 Found [http://ngocoblak.local/feeds/ngocoblak_callback/?oauth_token=Y4INtqLmdVnlxQ0oPpPxZcAiIVj5OdnXePNykz3zw4]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2009-08-26 11:01:58) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://ngocoblak.local/feeds/ngocoblak]
+
+
+Processing FeedsController#ngocoblak (for 127.0.0.1 at 2010-11-06 12:05:35) [GET]
+Rendering template within layouts/feeds
+Rendering feeds/ngocoblak
+Completed in 61ms (View: 59, DB: 0) | 200 OK [http://localhost/]

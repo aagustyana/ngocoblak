@@ -1,0 +1,6 @@
+>> Writing PID to tmp/pids/thin.pid
+>> Using rails adapter
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack.rb:17: warning: already initialized constant VERSION
+>> Thin web server (v1.0.0 codename That's What She Said)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3001, CTRL+C to stop

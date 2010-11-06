@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @feed.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @feed.url %>
+</p>
+<hr />
+<table border="1">
+	<tr>
+		<td>Title</td>
+		<td>Price</td>
+	</tr>	
+<% @feed.items.each do |item| %>
+<tr>
+  <td>
+	  <%=h item.title %>
+	</td>
+	<td>
+	  <%=h item.price %>
+	</td>	
+<% end %>	
+</table>
+<br />
+<%= button_to "Publish to Twitter", twitter_publish_feed_path(@feed)%>
+<%= link_to 'Back', feeds_path %>
